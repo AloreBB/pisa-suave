@@ -26,6 +26,29 @@ https://www.instagram.com/dreamlandofficial_1?igsh=NTZvcHRkNjlhYzhp
 - **Proxy Support**: Use proxies to manage multiple accounts and avoid rate limits.
 - **Cookie Management**: Save and load cookies to maintain sessions across restarts.
 
+## 🚀 Pisa Suave 2.0 - Instagram Analytics
+
+**NEW!** Advanced Instagram post analysis and engagement metrics:
+
+- **📊 Post Analysis**: Extract likes, comments, captions, and content types
+- **🎯 Engagement Metrics**: Calculate engagement rates and performance analytics
+- **💬 Comment Sentiment**: AI-powered sentiment analysis of comments
+- **📈 Content Insights**: Analyze hashtags, mentions, and content performance
+- **🔄 Batch Processing**: Analyze multiple posts with configurable rate limiting
+
+### Quick Start with Pisa Suave 2.0:
+
+```bash
+# Check credentials
+npm run check:credentials
+
+# Test Instagram analysis
+npm run test:instagram
+
+# Run examples
+npm run example:instagram
+```
+
 **Upcoming Features:**
 
 - **Twitter Automation**: (Coming soon) Automatically tweet, retweet, and like tweets.
@@ -47,15 +70,38 @@ https://www.instagram.com/dreamlandofficial_1?igsh=NTZvcHRkNjlhYzhp
    ```
 
 3. **Set up environment variables**:
-   Rename the [.env.example](http://_vscodecontentref_/1) file to [.env](http://_vscodecontentref_/1) in the root directory and add your Instagram credentials. Refer to the [.env.example](http://_vscodecontentref_/2) file for the required variables.
-   ```dotenv # Instagram credentials
-   IGusername=your_instagram_username
-   IGpassword=your_instagram_password 
+   Copy the `env.example` file to `.env` in the root directory and add your credentials. For Pisa Suave 2.0, you only need Instagram credentials:
    
-   Xusername= #Twitter username
-   Xpassword= #Twitter password
-
-   MONGODB_URI= #MongoDB URI
+   ```bash
+   # Copy the example file
+   cp env.example .env
+   
+   # Edit with your credentials
+   nano .env
+   ```
+   
+   **Minimum required variables for Pisa Suave 2.0:**
+   ```dotenv
+   # Instagram credentials (REQUIRED)
+   IGusername=your_instagram_username
+   IGpassword=your_instagram_password
+   
+   # Gemini API key (RECOMMENDED for AI features)
+   GEMINI_API_KEY_1=your_gemini_api_key
+   ```
+   
+   **Optional variables for future features:**
+   ```dotenv
+   # Twitter credentials (future)
+   Xusername=your_twitter_username
+   Xpassword=your_twitter_password
+   
+   # MongoDB (if using database features)
+   MONGODB_URI=mongodb://localhost:27017/pisa-suave
+   
+   # Server configuration
+   PORT=3000
+   NODE_ENV=development
    ```
 
 ## MongoDB Setup (Using Docker)
@@ -108,6 +154,26 @@ https://www.instagram.com/dreamlandofficial_1?igsh=NTZvcHRkNjlhYzhp
    ```sh
    npm start
    ```
+
+## 📜 Available Scripts
+
+### Core Scripts:
+```bash
+npm start                    # Start the main application
+npm run train-model         # Train AI model
+npm run train:link          # Train with website data
+npm run train:audio         # Train with audio files
+npm run train:youtube       # Train with YouTube content
+```
+
+### Pisa Suave 2.0 Scripts:
+```bash
+npm run setup:env           # Interactive environment setup
+npm run check:credentials   # Verify Instagram credentials
+npm run test:instagram      # Test Instagram analysis (5 posts)
+npm run example:instagram   # Run usage examples
+npm run build:instagram     # Build Instagram-related files
+```
 
 **Upcoming Features:**
 

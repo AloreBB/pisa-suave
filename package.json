@@ -8,7 +8,16 @@
     "train-model": "tsc && node build/Agent/training/Model.js",
     "train:link": "tsc && node build/Agent/training/WebsiteScraping.js",
     "train:audio": "tsc && node build/Agent/training/TrainWithAudio.js",
-    "train:youtube": "tsc && node build/Agent/training/youtubeURL.js"
+    "train:youtube": "tsc && node build/Agent/training/youtubeURL.js",
+    "test:instagram": "ts-node src/scripts/testInstagramAnalysis.ts",
+    "example:instagram": "ts-node src/scripts/exampleUsage.ts",
+    "check:credentials": "ts-node src/scripts/checkCredentials.ts",
+    "check:env": "node scripts/check-env.js",
+    "check:env:simple": "node scripts/check-env-simple.js",
+    "diagnose:login": "node scripts/diagnose-login.js",
+    "test:login": "node scripts/test-login.js",
+    "setup:env": "./scripts/setup-env.sh",
+    "build:instagram": "tsc src/types/instagram.ts src/client/IG-bot/IgClient.ts src/client/Instagram.ts src/scripts/*.ts"
   },
   "keywords": [],
   "author": "",
@@ -65,6 +74,7 @@
     "@types/readline-sync": "^1.4.8",
     "@types/request": "^2.48.12",
     "@types/textract": "^2.4.5",
-    "@types/user-agents": "^1.0.4"
+    "@types/user-agents": "^1.0.4",
+    "ts-node": "^10.9.2"
   }
 }

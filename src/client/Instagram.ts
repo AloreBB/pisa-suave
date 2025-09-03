@@ -25,4 +25,23 @@ export const closeIgClient = async () => {
     }
 };
 
-export { scrapeFollowersHandler } from './IG-bot/IgClient'; 
+export { scrapeFollowersHandler } from './IG-bot/IgClient';
+
+// Función helper para análisis de Instagram
+export const analyzeInstagramProfile = async (
+    username: string, 
+    options: {
+        daysBack?: number;
+        maxPosts?: number;
+        maxCommentsPerPost?: number;
+        includeMediaUrls?: boolean;
+        rateLimitMs?: number;
+    } = {}
+) => {
+    const client = await getIgClient();
+    try {
+        return await client.scrapeInstagramAnalysis(username, options);
+    } finally {
+        // No cerramos el cliente aquí para mantener la sesión activa
+    }
+}; 
